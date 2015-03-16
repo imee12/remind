@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading clearfix">
+      <h1 class="panel-title pull-left">My Reminders</h1>
+      <div class="btn-group pull-right">
+        <a ng-if="remCtl.isAuthenticated()" href="#/reminders/new" class="btn btn-success btn-sm">Create New Reminder</a>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-sm-12">
+          <section data-ng-repeat="reminder in remCtl.reminders">
+
+              <h2 class="text-primary">{{reminder.remindThis}}</h2>
+              <p class="text-success">{{reminder.shdlSMS | date}}</p>
+              <a class="btn btn-primary btn-xs" href="#/reminders/{{reminder._id}}">view more</a>
+          </section>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
